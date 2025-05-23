@@ -1,164 +1,87 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nikola & Tomáš - Svatba 2025</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nikola & Tomáš – Svatba</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Plzen_panorama_2018.jpg/1280px-Plzen_panorama_2018.jpg') no-repeat center center fixed;
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      background: url('https://www.ilikewallpaper.net/ipad-air-wallpaper/plzen-czech-republic-panorama/22370') no-repeat center center fixed;
       background-size: cover;
-      background-color: #fff8f0;
+      background-color: rgba(255, 255, 255, 0.9);
       background-blend-mode: lighten;
-      color: #4a3c31;
+    }
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.9);
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 1rem;
+      padding: 2rem;
     }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(255, 255, 255, 0.9);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    main {
-      background: rgba(255, 255, 255, 0.85);
-      max-width: 420px;
-      padding: 2.5rem 2rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
       text-align: center;
+      margin-bottom: 0.5rem;
     }
-
     h1 {
-      margin: 0 0 0.3rem 0;
-      font-weight: 700;
-      font-size: 2.8rem;
-      color: #8b5e3c;
+      font-size: 2.5rem;
     }
-
+    h2 {
+      font-size: 1.8rem;
+    }
     p {
-      margin: 0.3rem 0;
-      font-weight: 500;
-      font-size: 1.1rem;
-      color: #6d4b36;
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
     }
-
-    a {
-      color: #cfa07e;
-      text-decoration: none;
+    .section {
+      margin: 2rem 0;
     }
-    a:hover, a:focus {
-      text-decoration: underline;
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
     }
-
-    /* Časová osa - jednoduchá, decentní */
-    .timeline {
-      margin: 2rem 0 1.5rem 0;
-      border-left: 2px solid #cfa07e;
-      padding-left: 1.2rem;
-      text-align: left;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 1.5rem;
-      padding-left: 1rem;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -12px;
-      top: 8px;
-      width: 10px;
-      height: 10px;
-      background-color: #cfa07e;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #cfa07e80;
-    }
-    .timeline-date {
-      font-weight: 700;
-      color: #8b5e3c;
-      font-size: 1.05rem;
-    }
-    .timeline-text {
-      font-style: italic;
-      color: #6d4b36;
-      margin-top: 0.1rem;
-      font-size: 1rem;
-    }
-
-    /* Sekce parkování */
-    .parking {
-      margin-top: 2rem;
-      text-align: left;
-      font-size: 1rem;
-      color: #6d4b36;
-      border-top: 1px solid #cfa07e;
-      padding-top: 1.5rem;
-    }
-
-    /* Responzivita */
     @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-      }
-      main {
-        max-width: 100%;
-        padding: 2rem 1.5rem;
-      }
       h1 {
-        font-size: 2.4rem;
+        font-size: 2rem;
       }
-      p, .timeline-text, .timeline-date, .parking {
+      h2 {
+        font-size: 1.5rem;
+      }
+      p {
         font-size: 1rem;
-      }
-      .timeline {
-        border-left-width: 1.5px;
-        padding-left: 1rem;
-      }
-      .timeline-item::before {
-        width: 8px;
-        height: 8px;
-        left: -10px;
-        top: 7px;
       }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Nikola &amp; Tomáš</h1>
-    <p>10. 9. 2025</p>
-    <p>Statek Háječek, <a href="https://www.statekhajecek.cz" target="_blank" rel="noopener noreferrer">www.statekhajecek.cz</a></p>
-    <p><a href="https://maps.app.goo.gl/oKMMArttd7ggnuLN6" target="_blank" rel="noopener noreferrer">Zobrazit mapu</a></p>
-
-    <div class="timeline" aria-label="Časová osa významných událostí">
-      <div class="timeline-item">
-        <div class="timeline-date">10. 9. 2015</div>
-        <div class="timeline-text"><em>Primum conventum</em></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">10. 9. 2020</div>
-        <div class="timeline-text"><em>Desponsatio</em></div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">10. 9. 2025</div>
-        <div class="timeline-text"><em>Coniunctio in aeternum</em></div>
-      </div>
-    </div>
-
-    <section class="parking" aria-label="Parkování a ubytování">
-      <h2>Parkování a ubytování</h2>
-      <p>Parkování bude zajištěno přímo u statku. Pro hosty, kteří zvažují přespání, doporučujeme včasnou rezervaci u místních penzionů a hotelů.</p>
+  <div class="overlay">
+    <section class="section">
+      <h1>Nikola & Tomáš</h1>
+      <p>10. 9. 2025</p>
+      <p>Statek Háječek</p>
+      <p>Těšíme se na vás! 💐</p>
     </section>
-  </main>
+
+    <hr>
+
+    <section class="section">
+      <h2>Kde a kdy</h2>
+      <p><strong>Místo konání:</strong> <a href="https://www.statekhajecek.cz" target="_blank">Statek Háječek</a></p>
+      <p><a href="https://maps.app.goo.gl/oKMMArttd7ggnuLN6" target="_blank">Zobrazit na mapě</a></p>
+      <p><strong>Obřad začíná ve 14:00.</strong></p>
+      <p>Prosíme, dorazte nejpozději ve 13:00, ať máme dostatek času se usadit.</p>
+      <div style="margin-top: 1.5rem;">
+        <iframe
+          src="https://maps.google.com/maps?q=Statek%20H%C3%A1je%C4%8Dek&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
