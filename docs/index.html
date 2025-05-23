@@ -1,88 +1,187 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nikola & Tomáš – Svatba</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nikola & Tomáš - Svatební stránka</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      color: #333;
-      background: url('https://www.ilikewallpaper.net/ipad-air-wallpaper/plzen-czech-republic-panorama/22370') no-repeat center center fixed;
-      background-size: cover;
-      background-color: rgba(255, 255, 255, 0.9);
-      background-blend-mode: lighten;
+    /* Reset a základní styl */
+    * {
+      box-sizing: border-box;
     }
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.9);
-      min-height: 100vh;
-      padding: 2rem;
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/4/45/Plzen_panorama_2016.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      color: #4a2f19;
+      overflow-x: hidden;
+    }
+    /* Překryv pozadí pro zesvětlení */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(255, 248, 240, 0.9);
+      z-index: -1;
+    }
+    /* Kontejner obsahu */
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background: rgba(255,255,255,0.8);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
     h1, h2 {
-      font-family: 'Playfair Display', serif;
+      margin: 0.3em 0;
+      font-weight: 600;
       text-align: center;
-      margin-bottom: 0.5rem;
     }
     h1 {
       font-size: 2.5rem;
+      color: #7a4a20;
     }
     h2 {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
+      color: #a86c3b;
+      font-style: italic;
     }
     p {
+      font-size: 1.1rem;
+      line-height: 1.5;
       text-align: center;
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
+      margin: 0.7em 0 1.4em;
     }
-    .section {
-      margin: 2rem 0;
+    /* Časová osa */
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin: 1.5em 0 2em;
+      border-left: 3px solid #a86c3b;
+      position: relative;
+    }
+    .timeline li {
+      position: relative;
+      margin-bottom: 1.8em;
+      padding-left: 1.5em;
+    }
+    .timeline li:last-child {
+      margin-bottom: 0;
+    }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      background: #a86c3b;
+      border-radius: 50%;
+      border: 3px solid #7a4a20;
+    }
+    .timeline time {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.2em;
+      color: #7a4a20;
+    }
+    .timeline .latin {
+      font-style: italic;
+      color: #a86c3b;
+      margin-bottom: 0.3em;
+    }
+    /* Mapka */
+    .map-container {
+      margin: 1.5em 0 2em;
+      text-align: center;
     }
     iframe {
       width: 100%;
-      height: 300px;
+      height: 280px;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
-    @media (max-width: 600px) {
+    /* Čas obřadu */
+    .ceremony-time {
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 1.5em;
+      font-size: 1.2rem;
+      color: #7a4a20;
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b4a2e;
+      margin-top: 3rem;
+      padding-bottom: 1rem;
+    }
+    /* Responsivita */
+    @media (max-width: 480px) {
+      .container {
+        margin: 1rem 1rem 2rem;
+        padding: 1rem 1.2rem;
+      }
       h1 {
         font-size: 2rem;
       }
-      h2 {
-        font-size: 1.5rem;
-      }
-      p {
+      .ceremony-time {
         font-size: 1rem;
+      }
+      iframe {
+        height: 220px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <section class="section">
-      <h1>Nikola & Tomáš</h1>
-      <p>10. 9. 2025</p>
-      <p>Statek Háječek</p>
-      <p>Těšíme se na vás! 💐</p>
-    </section>
+  <main class="container" role="main">
+    <h1>Nikola &amp; Tomáš</h1>
+    <h2>10. 9. 2025</h2>
+    <p>Středa</p>
 
-    <hr>
+    <div class="ceremony-time">
+      Čas obřadu: 14:00<br />
+      Prosím doražte k nám do 13:00 hodin
+    </div>
 
-    <section class="section">
-      <h2>Kde a kdy</h2>
-      <p><strong>Místo konání:</strong> <a href="https://www.statekhajecek.cz" target="_blank">Statek Háječek</a></p>
-      <p><a href="https://maps.app.goo.gl/oKMMArttd7ggnuLN6" target="_blank">Zobrazit na mapě</a></p>
-      <p><strong>Obřad začíná ve 14:00.</strong></p>
-      <p>Prosíme, dorazte nejpozději ve 13:00, ať máme dostatek času se usadit.</p>
-      <div style="margin-top: 1.5rem;">
-        <iframe
-          src="https://maps.google.com/maps?q=Statek%20H%C3%A1je%C4%8Dek&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </section>
-  </div>
+    <ul class="timeline" aria-label="Časová osa vztahu">
+      <li>
+        <time datetime="2015-09-10">10. 9. 2015</time>
+        <div class="latin">Primum congressus</div>
+        <div>první setkání</div>
+      </li>
+      <li>
+        <time datetime="2020-09-10">10. 9. 2020</time>
+        <div class="latin">Sponsalia</div>
+        <div>zasnoubení</div>
+      </li>
+      <li>
+        <time datetime="2025-09-10">10. 9. 2025</time>
+        <div class="latin">Coniunctio in aeternum</div>
+        <div>spojení navždy</div>
+      </li>
+    </ul>
+
+    <div class="map-container" role="region" aria-label="Mapa lokality svatby">
+      <iframe 
+        src="https://maps.google.com/maps?q=Statek%20Háječek&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+        allowfullscreen 
+        loading="lazy"
+        title="Mapa Statek Háječek">
+      </iframe>
+    </div>
+  </main>
+
+  <footer>
+    &copy; Nikola &amp; Tomáš 2025
+  </footer>
 </body>
 </html>
-
