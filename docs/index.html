@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nikola & Tomáš - Svatba 2025</title>
   <style>
-    /* Reset a základ */
     body {
       margin: 0;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Plzen_panorama_2018.jpg/1280px-Plzen_panorama_2018.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-color: #fff8f0; /* fallback */
+      background-color: #fff8f0;
       background-blend-mode: lighten;
       color: #4a3c31;
       min-height: 100vh;
@@ -21,7 +20,6 @@
       padding: 2rem 1rem;
     }
 
-    /* Přesvětlení pozadí pomocí vrstvy */
     body::before {
       content: "";
       position: fixed;
@@ -31,24 +29,24 @@
       z-index: -1;
     }
 
-    section {
+    main {
       background: rgba(255, 255, 255, 0.85);
-      max-width: 400px;
-      padding: 2rem;
+      max-width: 420px;
+      padding: 2.5rem 2rem;
       border-radius: 10px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       text-align: center;
     }
 
     h1 {
-      margin: 0 0 0.2rem 0;
+      margin: 0 0 0.3rem 0;
       font-weight: 700;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #8b5e3c;
     }
 
     p {
-      margin: 0.1rem 0;
+      margin: 0.3rem 0;
       font-weight: 500;
       font-size: 1.1rem;
       color: #6d4b36;
@@ -62,41 +60,49 @@
       text-decoration: underline;
     }
 
-    /* Časová osa */
+    /* Časová osa - jednoduchá, decentní */
     .timeline {
-      margin-top: 2rem;
-      border-left: 3px solid #cfa07e;
-      padding-left: 1rem;
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .timeline-item {
-      margin-bottom: 1.5rem;
-      position: relative;
+      margin: 2rem 0 1.5rem 0;
+      border-left: 2px solid #cfa07e;
+      padding-left: 1.2rem;
       text-align: left;
     }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding-left: 1rem;
+    }
     .timeline-item::before {
-      content: "";
+      content: '';
       position: absolute;
       left: -12px;
-      top: 5px;
-      width: 14px;
-      height: 14px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
       background-color: #cfa07e;
       border-radius: 50%;
-      box-shadow: 0 0 5px #cfa07eaa;
+      box-shadow: 0 0 8px #cfa07e80;
     }
     .timeline-date {
       font-weight: 700;
       color: #8b5e3c;
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
     .timeline-text {
       font-style: italic;
       color: #6d4b36;
-      margin-top: 0.25rem;
-      font-size: 0.95rem;
+      margin-top: 0.1rem;
+      font-size: 1rem;
+    }
+
+    /* Sekce parkování */
+    .parking {
+      margin-top: 2rem;
+      text-align: left;
+      font-size: 1rem;
+      color: #6d4b36;
+      border-top: 1px solid #cfa07e;
+      padding-top: 1.5rem;
     }
 
     /* Responzivita */
@@ -104,35 +110,35 @@
       body {
         padding: 1rem;
       }
-      section {
+      main {
         max-width: 100%;
-        padding: 1.5rem 1rem;
-      }
-      .timeline {
-        max-width: 100%;
-        padding-left: 0.75rem;
-        border-left-width: 2px;
-      }
-      .timeline-item::before {
-        width: 12px;
-        height: 12px;
-        left: -10px;
-        top: 5px;
+        padding: 2rem 1.5rem;
       }
       h1 {
-        font-size: 2rem;
+        font-size: 2.4rem;
       }
-      p {
+      p, .timeline-text, .timeline-date, .parking {
         font-size: 1rem;
+      }
+      .timeline {
+        border-left-width: 1.5px;
+        padding-left: 1rem;
+      }
+      .timeline-item::before {
+        width: 8px;
+        height: 8px;
+        left: -10px;
+        top: 7px;
       }
     }
   </style>
 </head>
 <body>
-  <section>
+  <main>
     <h1>Nikola &amp; Tomáš</h1>
     <p>10. 9. 2025</p>
     <p>Statek Háječek, <a href="https://www.statekhajecek.cz" target="_blank" rel="noopener noreferrer">www.statekhajecek.cz</a></p>
+    <p><a href="https://maps.app.goo.gl/oKMMArttd7ggnuLN6" target="_blank" rel="noopener noreferrer">Zobrazit mapu</a></p>
 
     <div class="timeline" aria-label="Časová osa významných událostí">
       <div class="timeline-item">
@@ -148,6 +154,11 @@
         <div class="timeline-text"><em>Coniunctio in aeternum</em></div>
       </div>
     </div>
-  </section>
+
+    <section class="parking" aria-label="Parkování a ubytování">
+      <h2>Parkování a ubytování</h2>
+      <p>Parkování bude zajištěno přímo u statku. Pro hosty, kteří zvažují přespání, doporučujeme včasnou rezervaci u místních penzionů a hotelů.</p>
+    </section>
+  </main>
 </body>
 </html>
